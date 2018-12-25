@@ -1,6 +1,6 @@
-package mappers;
+package naut92.mappers;
 
-import entities.AstronomersEntity;
+import naut92.entities.AstronomersEntity;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -49,7 +49,7 @@ public interface AstronomersEntityMapper {
      */
     @Insert(INSERT)
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    boolean insertAstronomer(AstronomersEntity astronomer);
+    void insertAstronomer(AstronomersEntity astronomer);
 
     /**
      * Updates an instance of AstronomersEntity in the database.
@@ -57,7 +57,7 @@ public interface AstronomersEntityMapper {
      * @return true if transaction successful.
      */
     @Update(UPDATE)
-    boolean updateAstronomer(AstronomersEntity astronomer);
+    void updateAstronomer(AstronomersEntity astronomer);
 
     /**
      * Updates an instance of AstronomersEntity in the database.
@@ -75,5 +75,5 @@ public interface AstronomersEntityMapper {
      */
     //@Delete("DELETE FROM astronomers WHERE astronomer_name = #{astronomer_name}")
     @Delete(DELETE)
-    boolean deleteAstronomer(Long id);
+    void deleteAstronomer(Long id);
 }

@@ -1,12 +1,10 @@
+package naut92;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
-import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.AsyncServlet;
-import servlets.BlockingServlet;
+import naut92.servlets.BlockingServlet;
 
 public class JettyServerAsync {
     private Server server;

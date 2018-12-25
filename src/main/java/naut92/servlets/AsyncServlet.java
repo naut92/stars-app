@@ -1,4 +1,4 @@
-package servlets;
+package naut92.servlets;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.http.HttpServlet;

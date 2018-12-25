@@ -1,6 +1,6 @@
-import junit.framework.TestCase;
-
+package naut92;
 //import org.apache.commons.io.IOUtils;
+import naut92.JettyServerAsync;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -8,8 +8,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.nio.charset.StandardCharsets;
 
 //import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 

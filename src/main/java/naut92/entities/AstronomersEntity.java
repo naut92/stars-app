@@ -1,4 +1,4 @@
-package entities;
+package naut92.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

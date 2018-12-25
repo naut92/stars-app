@@ -1,6 +1,6 @@
-package mappers;
+package naut92.mappers;
 
-import entities.StarsEntity;
+import naut92.entities.StarsEntity;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

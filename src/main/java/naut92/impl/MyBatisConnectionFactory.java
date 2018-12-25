@@ -1,50 +1,39 @@
-package impl;
+package naut92.impl;
 
-import com.loiane.mapper.ContactMapper;
+import naut92.mappers.AstronomersEntityMapper;
+import naut92.mappers.StarsEntityMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
 
 /**
  * MyBatis Connection Factory, which reads the configuration data from a XML file.
  * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
+ * @author naut
+ *
  */
 public class MyBatisConnectionFactory {
-
 	private static SqlSessionFactory sqlSessionFactory;
 
 	static {
-
 		try {
-
-			String resource = "SqlMapConfig.xml";
+			String resource = System.getProperty("user.dir") + "src/main/resources/mybatis-config.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
-
 			if (sqlSessionFactory == null) {
 				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 
-				sqlSessionFactory.getConfiguration().addMapper(ContactMapper.class);
+				sqlSessionFactory.getConfiguration().addMapper(AstronomersEntityMapper.class);
+				sqlSessionFactory.getConfiguration().addMapper(StarsEntityMapper.class);
 			}
-		}
-
-		catch (FileNotFoundException fileNotFoundException) {
+		} catch (IOException fileNotFoundException) {
 			fileNotFoundException.printStackTrace();
 		}
-		catch (IOException iOException) {
-			iOException.printStackTrace();
-		}
 	}
 
-	public static SqlSessionFactory getSqlSessionFactory() {
-
+	static SqlSessionFactory getSqlSessionFactory() {
 		return sqlSessionFactory;
 	}
-
 }
