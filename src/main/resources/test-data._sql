@@ -1,0 +1,63 @@
+--astronomers
+INSERT INTO astronomers (id, astronom_name) VALUES (1, 'astronom 1');
+INSERT INTO astronomers (id, astronom_name) VALUES (2, 'astronom 2');
+INSERT INTO astronomers (id, astronom_name) VALUES (3, 'astronom 3');
+INSERT INTO astronomers (id, astronom_name) VALUES (4, 'astronom 4');
+INSERT INTO astronomers (id, astronom_name) VALUES (5, 'astronom 5');
+
+--stars
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (1, 'star1', '839', '575', 'white');
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (2, 'star2', '833', '575', 'white-blue');
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (3, 'star3', '840', '4', 'yellow');
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (4, 'star4', '839', '25', 'yellow');
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (5, 'star5', '839', '2455', 'red');
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (6, 'star6', '123', '12', 'yellow');
+INSERT INTO stars (id, star_name, longitude, latitude, color, astronom) VALUES (7, 'star7', '839', 'q456', 'white-blue');
+
+
+--spectral classes
+--INSERT INTO spectral_classes (id, class_name) VALUES (1, 'blue');
+--INSERT INTO spectral_classes (id, class_name) VALUES (2, 'white-blue');
+--INSERT INTO spectral_classes (id, class_name) VALUES (3, 'white');
+--INSERT INTO spectral_classes (id, class_name) VALUES (4, 'yellow-white');
+--INSERT INTO spectral_classes (id, class_name) VALUES (5, 'yellow');
+--INSERT INTO spectral_classes (id, class_name) VALUES (6, 'orange');
+--INSERT INTO spectral_classes (id, class_name) VALUES (7, 'red');
+
+--users
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('admin','admin',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('chief','chief',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('guest','guest',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('user','user',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('admin@gmail.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('study@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test1@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test2@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test3@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test4@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test5@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test6@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test7@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('test8@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('roleuser@outlook.com','12345',TRUE);
+--INSERT INTO users (username, PASSWORD, enabled) VALUES ('superuser@outlook.com','12345',TRUE);
+
+--groups
+--INSERT INTO groups (id, group_name) VALUES (1,'admins');
+--INSERT INTO groups (id, group_name) VALUES (2,'users');
+--INSERT INTO groups (id, group_name) VALUES (3,'guests');
+
+--group authorities
+--INSERT INTO group_authorities (group_id, authority) VALUES (1,'ROLE_ADMIN');
+--INSERT INTO group_authorities (group_id, authority) VALUES (1,'ROLE_USER');
+--INSERT INTO group_authorities (group_id, authority) VALUES (2,'ROLE_USER');
+--INSERT INTO group_authorities (group_id, authority) VALUES (1,'ROLE_GUEST');
+--INSERT INTO group_authorities (group_id, authority) VALUES (2,'ROLE_GUEST');
+--INSERT INTO group_authorities (group_id, authority) VALUES (3,'ROLE_GUEST');
+
+--group members
+--INSERT INTO group_members (id, username, group_id) VALUES (1,'admin', 1);
+--INSERT INTO group_members (id, username, group_id) VALUES (2,'chief', 1);
+--INSERT INTO group_members (id, username, group_id) VALUES (3,'user', 2);
+--INSERT INTO group_members (id, username, group_id) VALUES (4,'guest', 3);
+

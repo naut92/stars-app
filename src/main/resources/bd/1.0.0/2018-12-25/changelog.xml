@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="1" author="naut">
+        <createTable catalogName="stars_db"
+                     schemaName="public"
+                     tableName="astronomers">
+            <column name="id" type="long"/>
+            <column name="astronomer_name" type="varchar(255)"/>
+        </createTable>
+        <addAutoIncrement
+                columnDataType="long"
+                columnName="id"
+                incrementBy="1"
+                startWith="1"
+                tableName="astronomers"/>
+        <createTable catalogName="stars_db"
+                     schemaName="public"
+                     tableName="stars">
+            <column name="id" type="long"/>
+            <column name="star_name" type="varchar(255)"/>
+            <column name="longitude" type="varchar(255)"/>
+            <column name="latitude" type="varchar(255)"/>
+            <column name="color" type="varchar(255)"/>
+        </createTable>
+        <addAutoIncrement
+                columnDataType="long"
+                columnName="id"
+                incrementBy="1"
+                startWith="1"
+                tableName="stars"/>
+    <sql>
+        INSERT INTO astronomers (id, astronomer_name) VALUES (1, 'astronomer 1');
+        INSERT INTO astronomers (id, astronomer_name) VALUES (2, 'astronomer 2');
+        INSERT INTO astronomers (id, astronomer_name) VALUES (3, 'astronomer 3');
+        INSERT INTO astronomers (id, astronomer_name) VALUES (4, 'astronomer 4');
+        INSERT INTO astronomers (id, astronomer_name) VALUES (5, 'astronomer 5');
+
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (1, 'star1', '839', '575', 'white');
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (2, 'star2', '833', '575', 'white-blue');
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (3, 'star3', '840', '4', 'yellow');
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (4, 'star4', '839', '25', 'yellow');
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (5, 'star5', '839', '2455', 'red');
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (6, 'star6', '123', '12', 'yellow');
+        INSERT INTO stars (id, star_name, longitude, latitude, color) VALUES (7, 'star7', '839', 'q456', 'white-blue');
+    </sql>
+    </changeSet>
+</databaseChangeLog>
