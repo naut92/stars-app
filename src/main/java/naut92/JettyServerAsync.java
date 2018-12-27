@@ -6,11 +6,15 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletHandler;
 import naut92.servlets.BlockingServlet;
 
-public class JettyServerAsync {
+
+public class JettyServerAsync{
     private Server server;
+    //private static SqlSessionFactory sqlSessionFactory;
 
     public static void main(String[] args) throws Exception {
         new JettyServerAsync().start();
+        //AstronomersServiceImpl service = new AstronomersServiceImpl(sqlSessionFactory);
+        //System.out.println(service.getAstronomers().get(0).getAstronomer_name());
     }
 
     void start() throws Exception {
@@ -33,8 +37,9 @@ public class JettyServerAsync {
         ServletHandler servletHandler = new ServletHandler();
         server.setHandler(servletHandler);
 
-        servletHandler.addServletWithMapping(BlockingServlet.class, "/status");
+        servletHandler.addServletWithMapping(BlockingServlet.class, "/astronomers");
         //servletHandler.addServletWithMapping(AsyncServlet.class, "/heavy/async");
+
 
         server.start();
     }

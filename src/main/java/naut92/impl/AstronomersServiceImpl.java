@@ -8,7 +8,7 @@ import javax.annotation.ManagedBean;
 
 import java.util.List;
 
-@ManagedBean
+//@ManagedBean
 public class AstronomersServiceImpl implements AstronomersEntityMapper {
 
     private SqlSessionFactory sqlSessionFactory;
@@ -16,7 +16,7 @@ public class AstronomersServiceImpl implements AstronomersEntityMapper {
     private AstronomersEntityMapper mapper;
 
     public AstronomersServiceImpl(SqlSessionFactory sqlSessionFactory) {
-        this.sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();;
+        this.sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
     }
 
     public List<AstronomersEntity> getAstronomers() {

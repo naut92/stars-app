@@ -1,11 +1,11 @@
 package naut92.impl;
 
 import naut92.mappers.AstronomersEntityMapper;
-import naut92.mappers.StarsEntityMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
@@ -20,13 +20,14 @@ public class MyBatisConnectionFactory {
 
 	static {
 		try {
-			String resource = System.getProperty("user.dir") + "src/main/resources/mybatis-config.xml";
-			Reader reader = Resources.getResourceAsReader(resource);
+			String resource = System.getProperty("user.dir") + "/src/main/resources/mybatis-config.xml";
+
+			Reader reader = new FileReader(resource);
 			if (sqlSessionFactory == null) {
 				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 
 				sqlSessionFactory.getConfiguration().addMapper(AstronomersEntityMapper.class);
-				sqlSessionFactory.getConfiguration().addMapper(StarsEntityMapper.class);
+				//sqlSessionFactory.getConfiguration().addMapper(StarsEntityMapper.class);
 			}
 		} catch (IOException fileNotFoundException) {
 			fileNotFoundException.printStackTrace();
