@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class BlockingServlet extends HttpServlet {
+public class AstronomersServlet extends HttpServlet {
 
     private SqlSessionFactory sqlSessionFactory;
 

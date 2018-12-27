@@ -4,7 +4,7 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletHandler;
-import naut92.servlets.BlockingServlet;
+import naut92.servlets.AstronomersServlet;
 
 
 public class JettyServerAsync{
@@ -37,7 +37,7 @@ public class JettyServerAsync{
         ServletHandler servletHandler = new ServletHandler();
         server.setHandler(servletHandler);
 
-        servletHandler.addServletWithMapping(BlockingServlet.class, "/astronomers");
+        servletHandler.addServletWithMapping(AstronomersServlet.class, "/astronomers");
         //servletHandler.addServletWithMapping(AsyncServlet.class, "/heavy/async");
 
 
