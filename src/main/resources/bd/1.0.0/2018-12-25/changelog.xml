@@ -6,7 +6,9 @@
         <createTable catalogName="stars_db"
                      schemaName="public"
                      tableName="astronomers">
-            <column name="id" type="long"/>
+            <column name="id" type="long">
+                <constraints primaryKey="true"/>
+            </column>
             <column name="astronomer_name" type="varchar(255)"/>
         </createTable>
         <addAutoIncrement
@@ -18,7 +20,9 @@
         <createTable catalogName="stars_db"
                      schemaName="public"
                      tableName="stars">
-            <column name="id" type="long"/>
+            <column name="id" type="long">
+                <constraints primaryKey="true"/>
+            </column>
             <column name="star_name" type="varchar(255)"/>
             <column name="longitude" type="varchar(255)"/>
             <column name="latitude" type="varchar(255)"/>

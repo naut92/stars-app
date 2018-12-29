@@ -6,6 +6,11 @@
         <addColumn tableName="stars">
             <column name="astronomer_id" type="long"/>
         </addColumn>
+        <addForeignKeyConstraint baseColumnNames="astronomer_id"
+                                 baseTableName="stars"
+                                 constraintName="fk_astronomer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="astronomers"/>
     <sql>
         UPDATE stars_db.public.stars SET astronomer_id = 2 WHERE id = 1;
         UPDATE stars_db.public.stars SET astronomer_id = 2 WHERE id = 2;

@@ -1,10 +1,14 @@
 package naut92;
 
+//import org.eclipse.jetty.annotations.AnnotationConfiguration;
+import naut92.servlets.StarsServlet;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletHandler;
 import naut92.servlets.AstronomersServlet;
+//import org.eclipse.jetty.webapp.Configuration;
+//import org.eclipse.jetty.webapp.JettyWebXmlConfiguration;
 
 
 public class JettyServerAsync{
@@ -37,6 +41,11 @@ public class JettyServerAsync{
         ServletHandler servletHandler = new ServletHandler();
         server.setHandler(servletHandler);
 
+        // enable web 3.0 annotations
+        //Configuration.ClassList classList = Configuration.ClassList.setServerDefault(server);
+        //classList.addBefore(JettyWebXmlConfiguration.class.getName(), AnnotationConfiguration.class.getName());
+
+        servletHandler.addServletWithMapping(StarsServlet.class, "/stars");
         servletHandler.addServletWithMapping(AstronomersServlet.class, "/astronomers");
         //servletHandler.addServletWithMapping(AsyncServlet.class, "/heavy/async");
 

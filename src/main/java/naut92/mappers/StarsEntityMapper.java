@@ -53,7 +53,7 @@ public interface StarsEntityMapper {
      */
     @Insert(INSERT_STAR)
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn="id")
-    boolean insertStar(StarsEntity star);
+    void insertStar(StarsEntity star);
 
     /**
      * Updates an instance of StarsEntity in the database.
@@ -61,7 +61,7 @@ public interface StarsEntityMapper {
      * @return true if transaction successful.
      */
     @Update(UPDATE_STAR)
-    boolean updateStar(StarsEntity star);
+    void updateStar(StarsEntity star);
 
     /**
      * Delete an instance of Star from the database.
@@ -69,5 +69,5 @@ public interface StarsEntityMapper {
      * @return true if transaction successful.
      */
     @Delete(DELETE_STAR)
-    boolean deleteStar(Long id);
+    void deleteStar(Long id);
 }

@@ -1,6 +1,6 @@
 package naut92.servlets;
 
-import naut92.impl.AstronomersServiceImpl;
+import naut92.impl.StarsServiceImpl;
 import org.apache.ibatis.session.SqlSessionFactory;
 import com.google.gson.Gson;
 
@@ -11,20 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 //@RunAs("special")
-//@WebServlet(name = "AstronomersServlet", urlPatterns = {"/astronomers"})
 //@DeclareRoles({"user","client"})
-//@WebServlet(name = "astronomers", urlPatterns = "/astronomers")
-public class AstronomersServlet extends HttpServlet {
+//@WebServlet(name = "StarsServlet", urlPatterns = {"/stars"})
+public class StarsServlet extends HttpServlet {
 
     private SqlSessionFactory sqlSessionFactory;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        AstronomersServiceImpl service = new AstronomersServiceImpl(sqlSessionFactory);
+        StarsServiceImpl service = new StarsServiceImpl(sqlSessionFactory);
 
         // Convert numbers array into JSON string.
         Gson gson = new Gson();
-        String serviceInJson = gson.toJson(service.getAstronomers());
+        String serviceInJson = gson.toJson(service.getStars());
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_OK);
         response.getWriter().println(serviceInJson);

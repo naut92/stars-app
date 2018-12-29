@@ -4,11 +4,9 @@ import naut92.entities.AstronomersEntity;
 import naut92.mappers.AstronomersEntityMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import javax.annotation.ManagedBean;
 
 import java.util.List;
 
-//@ManagedBean
 public class AstronomersServiceImpl implements AstronomersEntityMapper {
 
     private SqlSessionFactory sqlSessionFactory;

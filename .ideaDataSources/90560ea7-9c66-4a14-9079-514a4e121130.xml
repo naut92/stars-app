@@ -22,127 +22,156 @@
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_308599A3_9AB5_489F_B923_F12CE8646D90)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_99B29B3D_8367_4EDE_9CA1_7CD00BEFE9AE)</DefaultExpression>
     </column>
     <column id="10" parent="5" name="ASTRONOMER_NAME">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="11" parent="6" name="ID">
-      <Position>1</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="12" parent="6" name="AUTHOR">
-      <Position>2</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="13" parent="6" name="FILENAME">
-      <Position>3</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="14" parent="6" name="DATEEXECUTED">
-      <Position>4</Position>
-      <DataType>TIMESTAMP(23,10)|93s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="15" parent="6" name="ORDEREXECUTED">
-      <Position>5</Position>
-      <DataType>INTEGER(10)|4s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="16" parent="6" name="EXECTYPE">
-      <Position>6</Position>
-      <DataType>VARCHAR(10)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="17" parent="6" name="MD5SUM">
-      <Position>7</Position>
-      <DataType>VARCHAR(35)|12s</DataType>
-    </column>
-    <column id="18" parent="6" name="DESCRIPTION">
-      <Position>8</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="19" parent="6" name="COMMENTS">
-      <Position>9</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="20" parent="6" name="TAG">
-      <Position>10</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="21" parent="6" name="LIQUIBASE">
-      <Position>11</Position>
-      <DataType>VARCHAR(20)|12s</DataType>
-    </column>
-    <column id="22" parent="6" name="CONTEXTS">
-      <Position>12</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="23" parent="6" name="LABELS">
-      <Position>13</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="24" parent="6" name="DEPLOYMENT_ID">
-      <Position>14</Position>
-      <DataType>VARCHAR(10)|12s</DataType>
-    </column>
-    <column id="25" parent="7" name="ID">
-      <Position>1</Position>
-      <DataType>INTEGER(10)|4s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="26" parent="7" name="LOCKED">
-      <Position>2</Position>
-      <DataType>BOOLEAN|16s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="27" parent="7" name="LOCKGRANTED">
-      <Position>3</Position>
-      <DataType>TIMESTAMP(23,10)|93s</DataType>
-    </column>
-    <column id="28" parent="7" name="LOCKEDBY">
-      <Position>4</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <index id="29" parent="7" name="PRIMARY_KEY_D">
+    <index id="11" parent="5" name="PRIMARY_KEY_5">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="30" parent="7" name="PK_DATABASECHANGELOGLOCK">
+    <key id="12" parent="5" name="PK_ASTRONOMERS">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="31" parent="8" name="ID">
+    <column id="13" parent="6" name="ID">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="6" name="AUTHOR">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="6" name="FILENAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="6" name="DATEEXECUTED">
+      <Position>4</Position>
+      <DataType>TIMESTAMP(23,10)|93s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="6" name="ORDEREXECUTED">
+      <Position>5</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="6" name="EXECTYPE">
+      <Position>6</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="6" name="MD5SUM">
+      <Position>7</Position>
+      <DataType>VARCHAR(35)|12s</DataType>
+    </column>
+    <column id="20" parent="6" name="DESCRIPTION">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="21" parent="6" name="COMMENTS">
+      <Position>9</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="22" parent="6" name="TAG">
+      <Position>10</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="23" parent="6" name="LIQUIBASE">
+      <Position>11</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+    </column>
+    <column id="24" parent="6" name="CONTEXTS">
+      <Position>12</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="25" parent="6" name="LABELS">
+      <Position>13</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="26" parent="6" name="DEPLOYMENT_ID">
+      <Position>14</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+    </column>
+    <column id="27" parent="7" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="7" name="LOCKED">
+      <Position>2</Position>
+      <DataType>BOOLEAN|16s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="7" name="LOCKGRANTED">
+      <Position>3</Position>
+      <DataType>TIMESTAMP(23,10)|93s</DataType>
+    </column>
+    <column id="30" parent="7" name="LOCKEDBY">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="31" parent="7" name="PRIMARY_KEY_D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="7" name="PK_DATABASECHANGELOGLOCK">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="8" name="ID">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_19F8059C_CA18_4D63_8CD7_1907CE4BCEB4)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_8E2EAE1F_3E7C_41AB_8420_547703225D07)</DefaultExpression>
     </column>
-    <column id="32" parent="8" name="STAR_NAME">
+    <column id="34" parent="8" name="STAR_NAME">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="33" parent="8" name="LONGITUDE">
+    <column id="35" parent="8" name="LONGITUDE">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="34" parent="8" name="LATITUDE">
+    <column id="36" parent="8" name="LATITUDE">
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="35" parent="8" name="COLOR">
+    <column id="37" parent="8" name="COLOR">
       <Position>5</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="36" parent="8" name="ASTRONOMER_ID">
+    <column id="38" parent="8" name="ASTRONOMER_ID">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
+    <index id="39" parent="8" name="PRIMARY_KEY_6D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="8" name="FK_ASTRONOMER_ID_INDEX_4">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ASTRONOMER_ID</ColNames>
+    </index>
+    <key id="41" parent="8" name="PK_STARS">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="8" name="FK_ASTRONOMER_ID">
+      <ColNames>ASTRONOMER_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>ASTRONOMERS</RefTableName>
+      <RefKeyName>PK_ASTRONOMERS</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
