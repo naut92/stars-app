@@ -1,6 +1,9 @@
 package naut92.impl;
 
+
+import naut92.entities.AstronomersEntity;
 import naut92.entities.StarsEntity;
+import naut92.mappers.AstronomersEntityMapper;
 import naut92.mappers.StarsEntityMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -38,6 +41,28 @@ public class StarsServiceImpl implements StarsEntityMapper {
             session.close();
         }
     }
+
+    @Override
+    public List<StarsEntity> getStarsWithAstronomerName() {
+        session = sqlSessionFactory.openSession();
+        try {
+            mapper = session.getMapper(StarsEntityMapper.class);
+            return mapper.getStarsWithAstronomerName();
+        } finally {
+            session.close();
+        }
+    }
+/*
+    @Override
+    public AstronomersEntity getById(Long id) {
+        session = sqlSessionFactory.openSession();
+        try {
+            mapper = session.getMapper(StarsEntityMapper.class);
+            return mapper.getById(id);
+        } finally {
+            session.close();
+        }
+    }*/
 
     @Override
     public StarsEntity getStarById(Long id) {

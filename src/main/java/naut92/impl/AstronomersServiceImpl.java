@@ -27,7 +27,7 @@ public class AstronomersServiceImpl implements AstronomersEntityMapper {
         }
     }
 
-    public AstronomersEntity getById(Long id) {
+    /*public AstronomersEntity getById(Long id) {
         session = sqlSessionFactory.openSession();
         try {
             mapper = session.getMapper(AstronomersEntityMapper.class);
@@ -35,7 +35,7 @@ public class AstronomersServiceImpl implements AstronomersEntityMapper {
         } finally {
             session.close();
         }
-    }
+    }*/
 
     public AstronomersEntity getAstronomerByName(String astronomerName) {
         session = sqlSessionFactory.openSession();

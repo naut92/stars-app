@@ -4,13 +4,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
+import javax.persistence.ManyToOne;
+
 @Data
 @NoArgsConstructor
 public class StarsEntity {
     @NonNull
     Long id, astronomer_id;
     @NonNull
-    String star_name, longitude, latitude, color;
+    String star_name, longitude, latitude, color, astronomer_name;
 
-    AstronomersEntity astronomersEntity;
+    //AstronomersEntity astronomer;
 }

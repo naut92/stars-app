@@ -31,8 +31,8 @@ public interface AstronomersEntityMapper {
      * @param id primary key value used for lookup.
      * @return A AstronomersEntity instance with a primary key value equals to pk. null if there is no matching row.
      */
-    @Select(SELECT_BY_ID)
-    AstronomersEntity getById(Long id);
+    /*@Select(SELECT_BY_ID)
+    AstronomersEntity getById(Long id);*/
 
     /**
      * Returns a Astronom instance from the database.
