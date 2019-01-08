@@ -13,8 +13,6 @@ public interface StarsEntityMapper {
 
     String GET_ALL_STARS = "SELECT * FROM stars";
     String GET_ALL_STARS_BY_ASTRONOMER_ID = "SELECT * FROM stars INNER JOIN astronomers ON astronomers.id = stars.astronomer_id";
-    //String GET_ALL_STARS_WITH_ASTRONOMER_NAME = "SELECT s.id, s.star_name, s.longitude, s.latitude, s.color, a.astronomer_name AS temp_name FROM stars s LEFT JOIN astronomers a ON s.astronomer_id = a.id";
-    //String GET_ALL_STARS_WITH_ASTRONOMER_NAME = "SELECT s.star_name, a.astronomer_name FROM stars s INNER JOIN astronomers a WHERE s.astronomer_id = a.id";
     String GET_STAR_BY_ID = "SELECT * FROM stars WHERE id = #{id}";
     String INSERT_STAR = "INSERT into stars(star_name, longitude, latitude, color, astronomer_id) VALUES(#{star_name}, #{longitude}, #{latitude}, #{color}, #{astronomer_id})";
     String UPDATE_STAR = "UPDATE stars SET star_name=#{star_name}, longitude=#{longitude}, latitude=#{latitude}, color=#{color}, astronomer_id=#{astronomer_id} WHERE id = #{id}";
@@ -52,14 +50,8 @@ public interface StarsEntityMapper {
      */
     //@Select(GET_ALL_STARS_WITH_ASTRONOMER_NAME)
     @SelectProvider(type = MyBatisUtil.class, method="getStarsWithAstronomerName")
-    /*@Results(value = {
-            @Result(property = "id", column = "id"),
-            @Result(property = "star_name", column = "star_name"),
-            @Result(property = "longitude", column = "longitude"),
-            @Result(property = "latitude", column = "latitude"),
-            @Result(property = "color", column = "color"),
-            @Result(property = "astronomer_id", column = "astronomer_id"),
-            @Result(property="astronomer", javaType=List.class, column="astronomer_name", one=@One(select="getById"))})*/
+    //@Results(value = {
+            //@Result(property="astronomer", javaType=List.class, column="astronomer_name", one=@One(select="getById"))})
     List <StarsEntity> getStarsWithAstronomerName();
 
     /**
@@ -68,11 +60,12 @@ public interface StarsEntityMapper {
      * @return A AstronomersEntity instance with a primary key value equals to pk. null if there is no matching row.
      */
     //@Select(SELECT_BY_ID)
-    //@Select("SELECT astronomer_name FROM ASTRONOMERS WHERE ID = #{astronomer_id}")
-    //@Results(value = {
-      //      @Result(property = "id", column = "id"),
-        //    @Result(property = "astronomer_name", column = "astronomer_name")})
-    //AstronomersEntity getById(Long id);
+    /*
+    @Select("SELECT astronomer_name FROM ASTRONOMERS WHERE ID = #{astronomer_id}")
+    @Results(value = {
+            @Result(property = "id", column = "id"),
+            @Result(property = "astronomer_name", column = "astronomer_name")})
+    AstronomersEntity getById(Long id);//*/
 
 
     /**

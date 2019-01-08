@@ -62,7 +62,7 @@ public class StarsServiceImpl implements StarsEntityMapper {
         } finally {
             session.close();
         }
-    }*/
+    }//*/
 
     @Override
     public StarsEntity getStarById(Long id) {
