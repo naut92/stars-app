@@ -13,7 +13,6 @@ public interface StarsEntityMapper {
 
     String GET_ALL_STARS = "SELECT * FROM stars";
     String GET_ALL_STARS_BY_ASTRONOMER_ID = "SELECT * FROM stars INNER JOIN astronomers ON astronomers.id = stars.astronomer_id";
-    String GET_STAR_BY_ID = "SELECT * FROM stars WHERE id = #{id}";
     String INSERT_STAR = "INSERT into stars(star_name, longitude, latitude, color, astronomer_id) VALUES(#{star_name}, #{longitude}, #{latitude}, #{color}, #{astronomer_id})";
     String UPDATE_STAR = "UPDATE stars SET star_name=#{star_name}, longitude=#{longitude}, latitude=#{latitude}, color=#{color}, astronomer_id=#{astronomer_id} WHERE id = #{id}";
     String DELETE_STAR = "DELETE FROM stars WHERE id = #{id}";
@@ -48,32 +47,17 @@ public interface StarsEntityMapper {
      * Returns the list of all Stars instances from the database with astronomers names.
      * @return the list of all StarsEntity instances from the database with astronomer_name.
      */
-    //@Select(GET_ALL_STARS_WITH_ASTRONOMER_NAME)
     @SelectProvider(type = MyBatisUtil.class, method="getStarsWithAstronomerName")
     //@Results(value = {
             //@Result(property="astronomer", javaType=List.class, column="astronomer_name", one=@One(select="getById"))})
     List <StarsEntity> getStarsWithAstronomerName();
 
     /**
-     * Returns a Astronomer instance from the database.
-     * @param id primary key value used for lookup.
-     * @return A AstronomersEntity instance with a primary key value equals to pk. null if there is no matching row.
-     */
-    //@Select(SELECT_BY_ID)
-    /*
-    @Select("SELECT astronomer_name FROM ASTRONOMERS WHERE ID = #{astronomer_id}")
-    @Results(value = {
-            @Result(property = "id", column = "id"),
-            @Result(property = "astronomer_name", column = "astronomer_name")})
-    AstronomersEntity getById(Long id);//*/
-
-
-    /**
      * Returns a Star instance from the database.
      * @param id primary key value used for lookup.
      * @return A StarsEntity instance with a primary key value equals to pk. null if there is no matching row.
      */
-    @Select(GET_STAR_BY_ID)
+    @SelectProvider(type = MyBatisUtil.class, method="getStarById")
     StarsEntity getStarById(Long id);
 
     /**

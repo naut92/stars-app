@@ -1,12 +1,13 @@
 package naut92.mappers;
 
 import naut92.entities.AstronomersEntity;
+import naut92.util.MyBatisUtil;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 public interface AstronomersEntityMapper {
-    String SELECT_ALL = "SELECT * FROM astronomers";
+    //String SELECT_ALL = "SELECT * FROM astronomers";
     String SELECT_BY_ID = "SELECT * FROM astronomers WHERE id = #{id}";
     String SELECT_BY_NAME = "SELECT * FROM astronomers WHERE astronomer_name = #{astronomer_name}";
     String INSERT = "INSERT into astronomers(astronomer_name) VALUES(#{astronomer_name})";
@@ -23,7 +24,7 @@ public interface AstronomersEntityMapper {
      * Returns the list of all Astronomers instances from the database.
      * @return the list of all Astronomers instances from the database.
      */
-    @Select(SELECT_ALL)
+    @SelectProvider(type = MyBatisUtil.class, method="getAstronomers")
     List<AstronomersEntity> getAstronomers();
 
     /**

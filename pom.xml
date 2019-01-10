@@ -7,7 +7,7 @@
     <groupId>stars-app</groupId>
     <artifactId>stars-app</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <!--packaging>war</packaging-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +19,7 @@
         <jetty.version>9.4.14.v20181114</jetty.version>
         <junit.version>4.12</junit.version>
         <liquibase.version>3.6.2</liquibase.version>
+        <jersey.version>2.27</jersey.version>
         <!--httpclient.version>4.5.3</httpclient.version>
         <commons.io.version>2.5</commons.io.version-->
 
@@ -35,6 +36,39 @@
             <artifactId>jetty-servlet</artifactId>
             <version>${jetty.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+
+        <!--Jersey2-->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-jetty-http</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <!--end Jersey2-->
 
         <!--dependency>
             <groupId>org.eclipse.jetty</groupId>

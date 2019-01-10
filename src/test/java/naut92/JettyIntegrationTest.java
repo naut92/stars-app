@@ -17,12 +17,12 @@ public class JettyIntegrationTest {
     @BeforeClass
     public static void setup() throws Exception {
         jettyServer = new JettyServerAsync();
-        jettyServer.start();
+        //jettyServer.start();
     }
 
     @AfterClass
     public static void cleanup() throws Exception {
-        jettyServer.stop();
+        //jettyServer.stop();
     }
 
     @Test
