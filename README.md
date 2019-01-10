@@ -1,5 +1,5 @@
 # stars_app
-fast simple Java CRUD-app, CDI, REST api, MyBatis, Jetty, H2(and PostgreSQL).
+fast simple Java CRUD-app, Jersey, REST api, MyBatis, Jetty, H2(and PostgreSQL).
 
 Backend side
 
